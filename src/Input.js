@@ -41,6 +41,7 @@ function Input({
     rounded && styles.rounded,
     borderless && styles.borderless,
     style,
+    styles.inputWrapper
   ];
 
 
@@ -178,6 +179,7 @@ const styles = theme =>
     },
     inputView: {
       flex: 1,
+      height: '100%'
     },
     inputIcon: {
       marginHorizontal: theme.SIZES.BASE,

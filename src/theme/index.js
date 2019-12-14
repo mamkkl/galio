@@ -33,7 +33,7 @@ export function withGalio(Component, styles) {
             <Component
               {...props}
               theme={{ ...GalioTheme, ...theme }}
-              styles={styles && styles({ ...GalioTheme, ...theme })}
+              styles={{...(styles ? styles({ ...GalioTheme, ...theme }) : {}), ...(Array.isArray(props.styles) ? props.styles.reduce((a,c) => ({...a, ...c})) : props.styles)}}
             />
           )}
         </GalioContext.Consumer>
